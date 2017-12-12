@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Login and Registration";
+}
+@using LoginReg.Models
+@model LoginReg.Models.UserViewModel
+
+<link rel="stylesheet" href="~/css/index.css">
+
+<h4>@ViewBag.Message</h4>
+
+<h1>Register</h1>
+<form asp-controller="Home" asp-action="Register" method="POST">
+    <label asp-for="FName"></label>
+    <input asp-for="FName"/>
+    <span asp-validation-for="FName"></span> <p></p>
+    <label asp-for="LName"></label>
+    <input asp-for="LName"/>
+    <span asp-validation-for="LName"></span> <p></p>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/> 
+    <span asp-validation-for="Email"></span><span>@ViewBag.Exists</span> <p></p>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    <span asp-validation-for="Password"></span> <p></p>
+    <label asp-for="CFPassword"></label>
+    <input asp-for="CFPassword"/>
+    <span asp-validation-for="CFPassword"></span> <p></p>
+    <input type="submit" value="Register"/>
+</form>
+
+@Html.Partial("Login", new LogUser())

@@ -1,0 +1,14 @@
+@model LoginReg.Models.LogUser
+
+<link rel="stylesheet" href="~/css/index.css">
+
+<h1>Log In</h1>
+<form action="/LoginUser" method="POST">
+    <label asp-for="LogEmail"></label>
+    <input asp-for="LogEmail"/>
+    <span asp-validation-for="LogEmail"></span> <span> @TempData["LoginEmailError"]</span>    <p></p>
+    <label asp-for="LogPassword"></label>
+    <input asp-for="LogPassword"/>
+    <span asp-validation-for="LogPassword"></span> <span> @TempData["LoginPasswordError"]</span> <p></p>
+    <input type="submit" value="Submit">
+</form>
